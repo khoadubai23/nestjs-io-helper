@@ -1,0 +1,55 @@
+{
+  "name": "nestjs-io-helper",
+  "version": "1.0.0",
+  "description": "Một thư viện helper cho NestJS giúp đơn giản hóa việc xử lý input/output và các tác vụ thường gặp",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs --format esm --dts --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nestjs",
+    "helper",
+    "io",
+    "input",
+    "output",
+    "validation",
+    "formatting",
+    "typescript"
+  ],
+  "author": "KhoaDubai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhoaDubai/nestjs-io-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KhoaDubai/nestjs-io-helper/issues"
+  },
+  "homepage": "https://github.com/KhoaDubai/nestjs-io-helper#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=8.0.0"
+  }
+}
